@@ -81,6 +81,11 @@ export type PopoverCommonStyleProps = {
    * @default true
    */
   addBackdrop?: boolean;
+
+  /**
+   * The z-index of the tippy popover. If not supplied, tippy will default to 9999
+   */
+  zIndex?: number;
 };
 
 export interface Props extends PopoverCommonStyleProps, Partial<LifecycleHooks> {
@@ -202,4 +207,16 @@ export interface Props extends PopoverCommonStyleProps, Partial<LifecycleHooks> 
    * Whether to allow the trigger event to continue to propagate after the Popover is triggered.
    */
   continuePropagationOnTrigger?: boolean;
+
+  /**
+   * aria-labelledby for an interactive popover only, defaults to the trigger component id.
+   * Used in nested cases where the triggerComponent isn't the actual button.
+   */
+  'aria-labelledby'?: string;
+
+  /**
+   * aria-label for an interactive popover only. By default, it will be labelled by the triggerComponent.
+   * Only required in the unusual circumstance where the popover label cannot match the trigger.
+   */
+  'aria-label'?: string;
 }
